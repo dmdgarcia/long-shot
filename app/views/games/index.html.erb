@@ -1,1 +1,4 @@
 <h1 class="title">Games index</h1>
+ <% @games.each do |game|  %>
+ <%= game.home_id - game.away_id%> 
+ <% end %>
