@@ -7,4 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 t1 = Team.create(name: 'Liverpool')
 t2 = Team.create(name: 'Manchester City')
-game = Game.create(home_id: t1.id, away_id: t2.id)
+
+game4 = Game.new(home_id: 3, away_id: 1)
