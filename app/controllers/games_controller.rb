@@ -5,12 +5,6 @@ def index
     
 end
 
-def game
-    @games.each do |game|
-        game.home_id - game.away_id
-    end
-end
-
 def new
     @game = Game.new
 end
