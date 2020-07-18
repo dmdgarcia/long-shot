@@ -1,3 +1,8 @@
 class Bet < ApplicationRecord
-    has_many :games
+    belongs_to :game
+    belongs_to :user 
+
+    def goals
+        [away_goals, home_goals]
+    end
 end

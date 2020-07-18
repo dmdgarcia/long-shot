@@ -1,0 +1,4 @@
+<%= simple_form_for @bet do |bet| %>
+<%= bet.collection_select :game_id, Game.all, :id, :home_goals, :away_goals,  %>
+<%= bet.submit "Save", class: "button is-rounded" %>
+<% end %>
