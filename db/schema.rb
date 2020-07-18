@@ -13,14 +13,19 @@
 ActiveRecord::Schema.define(version: 2020_07_16_042811) do
 
   create_table "bets", force: :cascade do |t|
-    t.integer "goals"
+    t.integer "home_goals"
+    t.integer "away_goals"
+    t.integer "game_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["game_id"], name: "index_bets_on_game_id"
   end
 
   create_table "games", force: :cascade do |t|
     t.integer "home_id"
     t.integer "away_id"
+    t.integer "home_goals"
+    t.integer "away_goals"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
