@@ -1,3 +1,4 @@
 class Bet < ApplicationRecord
-    has_many :games
+    belongs_to :game
+    belongs_to :user 
 end

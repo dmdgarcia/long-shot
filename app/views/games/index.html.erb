@@ -3,12 +3,24 @@
         <h1 class="title">Games index</h1>
     </div>
     <div class="games-container">
-    <ul>
-        <% @games.each do |game| %>
-            
-           <li> <%=game.home_team.name%> - <%=game.away_team.name%></li>
-           
-        <% end %>
-         </ul>    
+
+        <ul>
+            <% @games.each do |game| %>
+
+            <li> <%=game.home_team.name%> - <%=game.away_team.name%></li>
+
+            <% end %>
+
+
+
+
+            <%= simple_form_for @bets do |bet| %>
+
+            <%= bet.input  %>
+            <%= bet.submit "Save", class: "button is-rounded" %>
+            <% end %>
+
+
+        </ul>
     </div>
 </div>
