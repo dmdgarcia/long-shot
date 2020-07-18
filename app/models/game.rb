@@ -7,4 +7,8 @@ class Game < ApplicationRecord
     [away_team, home_team]
   end
 
+  def goals
+    [away_goals, home_goals]
+end
+
 end

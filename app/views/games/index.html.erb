@@ -7,19 +7,9 @@
         <ul>
             <% @games.each do |game| %>
 
-            <li> <%=game.home_team.name%> - <%=game.away_team.name%></li>
+            <li> <%=game.home_team.name%> <%=game.home_team.name%> - <%=game.away_team.name%></li>
 
             <% end %>
-
-
-
-
-            <%= simple_form_for @bets do |bet| %>
-
-            <%= bet.input  %>
-            <%= bet.submit "Save", class: "button is-rounded" %>
-            <% end %>
-
 
         </ul>
     </div>
