@@ -12,7 +12,7 @@ class BetsController < ApplicationController
         if @bet.save
             redirect_to bet_path(@bet)
         else 
-            render :new
+           render :new
         end
     end    
         
@@ -25,7 +25,7 @@ class BetsController < ApplicationController
     private
     
     def bets_params
-        params.require(:bet).permit(:goals)
+        params.require(:bet).permit(:home_goals, :away_goals, :game_id)
     end
     
 end
