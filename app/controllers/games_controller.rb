@@ -2,11 +2,12 @@ class GamesController < ApplicationController
 
     def index
         @games = Game.all
-        
+        @bets = Bet.all
     end
 
     def new
         @game = Game.new
+        
     end
 
     def create
