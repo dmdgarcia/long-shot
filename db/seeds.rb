@@ -24,7 +24,7 @@ Game.destroy_all
 
 t1 = Team.create(name: 'Liverpool')
 t2 = Team.create(name: 'Manchester City')
-game = Game.create(home_id: t1.id, away_id: t2.id)
+game = Game.create(home_team_id: t1.id, away_team_id: t2.id)
 
 puts "Created #{Game.count} games"
 puts "Created #{Team.count} teams"

@@ -13,6 +13,8 @@
 ActiveRecord::Schema.define(version: 2020_07_16_042811) do
 
   create_table "bets", force: :cascade do |t|
+    t.integer "home_team_id"
+    t.integer "away_team_id"
     t.integer "home_goals"
     t.integer "away_goals"
     t.integer "game_id"
@@ -22,8 +24,8 @@ ActiveRecord::Schema.define(version: 2020_07_16_042811) do
   end
 
   create_table "games", force: :cascade do |t|
-    t.integer "home_id"
-    t.integer "away_id"
+    t.integer "home_team_id"
+    t.integer "away_team_id"
     t.integer "home_goals"
     t.integer "away_goals"
     t.datetime "created_at", precision: 6, null: false
