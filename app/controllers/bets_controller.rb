@@ -15,6 +15,10 @@ class BetsController < ApplicationController
         render :new
         end
     end    
+
+    def show
+        @bet = Bet.find(params[:id])
+    end
         
     def destroy
         @bet = Bet.find(params[:id])

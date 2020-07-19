@@ -9,6 +9,8 @@
                 <%= simple_form_for Bet.new do |bet| %>
                 <%= bet.input_field :home_goals %> - <%= bet.input_field :away_goals %>
 
+                <%= bet.hidden_field :game_id, value: game.id %>
+
                 <%= bet.hidden_field :home_team_id, value: game.home_team.id %>
                 <%= bet.hidden_field :away_team_id, value: game.away_team.id %>
 

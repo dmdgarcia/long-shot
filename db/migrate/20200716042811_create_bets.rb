@@ -5,8 +5,10 @@ class CreateBets < ActiveRecord::Migration[6.0]
       t.integer :away_team_id
       t.integer :home_goals
       t.integer :away_goals
+      t.belongs_to :user
       t.belongs_to :game
       t.timestamps
     end
   end
 end
+
