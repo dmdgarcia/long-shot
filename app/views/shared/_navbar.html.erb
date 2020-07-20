@@ -1,8 +1,8 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item" href="#">
+    <%= link_to root_path, class: "navbar-item" do%> 
       <%= image_tag "football.png", alt: "alttext" %>
-    </a>
+     <% end%>
 
     <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
       <span aria-hidden="true"></span>
@@ -29,12 +29,8 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button is-primary">
-            <strong> Sign up </strong>
-          </a>
-          <a class="button is-primary">
-            <strong> Log in </strong>
-          </a>
+          <%= link_to "Sign up", new_user_registration_path, class: "button is-primary" %> 
+          <%= link_to "Log in", new_user_session_path, class: "button is-primary"%>
         </div>
       </div>
     </div>
