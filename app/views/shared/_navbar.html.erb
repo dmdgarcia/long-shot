@@ -24,13 +24,26 @@
       <a class="navbar-item">
         Dashboard
       </a>
+
+     
     </div>
 
     <div class="navbar-end">
+    <% if current_user %>
+     <p class="navbar-item">
+       Welcome <%= current_user.username %>
+      </p>
+    <% else %>
+      <p class="navbar-item">You're not signed in</p>
+    <% end %>
       <div class="navbar-item">
         <div class="buttons">
+        <% if current_user %>
+          <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "button is-danger" %>
+        <% else %>
           <%= link_to "Sign up", new_user_registration_path, class: "button is-primary" %> 
           <%= link_to "Log in", new_user_session_path, class: "button is-primary"%>
+          <% end %>
         </div>
       </div>
     </div>
