@@ -14,7 +14,7 @@
                     <%= f.hidden_field :home_team_id, value: game.home_team.id %>
                     <%= f.hidden_field :away_team_id, value: game.away_team.id %>
 
-                    <%= f.submit "Save", class: "button is-rounded" %></li>
+                    <%= f.submit "Save", class: "button is-rounded", method: "create" %></li>
                 <% end %>
                 <% @bets.each do |bet| %>
                     <li><%=game.home_team.name %> <%= [bet.home_goals]%> - <%=game.away_team.name %> <%= [ bet.away_goals] %></li>
