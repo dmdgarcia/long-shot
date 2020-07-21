@@ -16,9 +16,9 @@
 
                     <%= f.submit "Save", class: "button is-rounded" %></li>
                 <% end %>
-            <% @bets.each do |bet| %>
-                <li><%=game.home_team.name %> <%= [ bet.home_goals]%> - <%=game.away_team.name %> <%= [ bet.away_goals] %></li>
-            <% end %>
+                <% @bets.each do |bet| %>
+                    <li><%=game.home_team.name %> <%= [bet.home_goals]%> - <%=game.away_team.name %> <%= [ bet.away_goals] %></li>
+                <% end %>
             <% end %>
 
         </ul>
