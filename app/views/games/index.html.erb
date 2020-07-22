@@ -6,7 +6,7 @@
         <ul>
             <% @games.each do |game| %>
                 <li><%=game.home_team.name%> - <%=game.away_team.name%>
-                    <%= simple_form_for Bet.new do |f| %>
+                    <%= simple_form_for @bet do |f| %>
                     <%= f.input_field :home_goals, as: :float, min: 0 %> - <%= f.input_field :away_goals, as: :float, min: 0 %>
 
                     <%= f.hidden_field :game_id, value: game.id %>
@@ -16,8 +16,9 @@
 
                     <%= f.submit "Save", class: "button is-rounded", method: "create" %></li>
                 <% end %>
+                <%= render 'shared/flash' %>
                 <% @bets.each do |bet| %>
-                    <li><%=game.home_team.name %> <%= [bet.home_goals]%> - <%=game.away_team.name %> <%= [ bet.away_goals] %></li>
+                    <li><%=game.home_team.name %> <%= [bet.home_goals]%> - <%= [ bet.away_goals] %> <%=game.away_team.name %> </li>
                 <% end %>
             <% end %>
 
