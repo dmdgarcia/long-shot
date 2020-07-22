@@ -9,6 +9,7 @@ class BetsController < ApplicationController
     
     def create
         @bet = Bet.new(bets_params)
+        @bet.user = current_user
         if @bet.save
             redirect_back(fallback_location: root_path)
         else 
