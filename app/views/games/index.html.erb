@@ -14,7 +14,7 @@
                     <%= f.hidden_field :home_team_id, value: game.home_team.id %>
                     <%= f.hidden_field :away_team_id, value: game.away_team.id %>
 
-                    <%= f.submit "Save", class: "button is-rounded", method: "create" %></li>
+                    <%= f.submit "Save", class: "button is-rounded"%></li>
                 <% end %>
                 <%= render 'shared/flash' %>
                 <% @bets.each do |bet| %>
