@@ -28,13 +28,13 @@ class BetsController < ApplicationController
       def update
         @bet = Bet.find(params[:id])
         @bet.update(bets_params)
-        redirect_to bets_path(@bet)
+        redirect_to games_path(@bet)
       end
     
     def destroy
         @bet = Bet.find(params[:id])
         @bet.destroy
-        redirect_to bets_path
+        redirect_to games_path
     end
     
     private
