@@ -14,7 +14,7 @@
                 <%= f.hidden_field :home_team_id, value: game.home_team.id %>
                 <%= f.hidden_field :away_team_id, value: game.away_team.id %>
 
-                <%= f.submit "Save", class: "button is-rounded"%>
+                <%= f.submit "Save", class: "button is-rounded is-small"%>
 
 
 
@@ -23,7 +23,6 @@
             <%= render 'shared/flash' %>
 
             <% @bets.each do |bet| %>
-
             <li><%=game.home_team.name %> <%= [bet.home_goals]%> - <%= [bet.away_goals] %> <%=game.away_team.name %>
 
                 <%= simple_form_for bet do |f| %>
@@ -31,10 +30,18 @@
                 <%= f.hidden_field :game_id, value: bet.game.id %>
                 <%= f.hidden_field :home_team_id, value: bet.game.home_team.id %>
                 <%= f.hidden_field :away_team_id, value: bet.game.away_team.id %>
-                <%= f.submit "Save", method: :post, class: "button is-rounded" %>
+                <%= f.submit "Save", method: :post, class: "button is-rounded is-small" %>
 
-                <button class="button is-rounded">Edit</button>
-                <%= link_to 'Destroy', bet_path(bet), method: :delete, class: "button is-rounded", data: { confirm: 'Are you sure?' } %>
+
+                <button class="open-modal button is-rounded is-small">Edit</button>
+                <div class="modal" id="themodal">
+                    <div class="modal-background"></div>
+                    <div class="modal-content">
+                     <%= bet.home_goals %>
+                    </div>
+                    <button class="modal-close is-large" aria-label="close"></button>
+                </div>
+                <%= link_to 'Destroy', bet_path(bet), method: :delete, class: "button is-rounded is-small", data: { confirm: 'Are you sure?' } %>
 
 
             </li>

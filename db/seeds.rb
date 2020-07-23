@@ -14,12 +14,12 @@ puts "Clearing database..."
 Team.destroy_all
 Game.destroy_all
 
-# league_url = "https://raw.githubusercontent.com/openfootball/football.json/master/2019-20/en.1.clubs.json"
+# league_url = "https://raw.githubusercontent.com/openfootball/football.json/master/2019-20/en.1.json"
 # get_league = open(league_url).read
 
-# JSON.parse(get_league)['clubs'].each do |team|
-#     Team.create(name: team["name"])
-#     Game.create(home_id: team["name"], away_id: team["name"])
+# JSON.parse(get_league)['rounds']['matches'].each do |match|
+   
+#     Game.create(home_id: match.team1, away_id: match.team2)
 # end
 
 t1 = Team.create(name: 'Liverpool')
