@@ -9,10 +9,11 @@ class BetsController < ApplicationController
     
     def create
         @bet = Bet.new(bets_params)
+        @bet.user = current_user
         if @bet.save
-            redirect_back(fallback_location: root_path)
+            redirect_back(fallback_location: root_path, :notice => "Bet placed")
         else 
-        render :new
+            redirect_back(fallback_location: root_path, :alert => "Error while placing bet")
         end
     end    
 

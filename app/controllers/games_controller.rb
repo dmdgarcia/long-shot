@@ -3,6 +3,7 @@ class GamesController < ApplicationController
     def index
         @games = Game.all
         @bets = Bet.all
+        @bet = Bet.new
     end
 
     def new

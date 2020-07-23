@@ -15,3 +15,14 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+function removeFlash(){
+    setTimeout(function(){
+      const flash = document.querySelector('.flash')
+      if(flash){
+        flash.remove()
+      }
+    }, 3000)
+  };
+
+  document.addEventListener('change', removeFlash())
