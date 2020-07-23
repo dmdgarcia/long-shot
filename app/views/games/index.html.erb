@@ -5,21 +5,32 @@
     <div class="games-container">
         <ul>
             <% @games.each do |game| %>
-                <li><%=game.home_team.name%> - <%=game.away_team.name%>
-                    <%= simple_form_for @bet do |f| %>
-                    <%= f.input_field :home_goals, as: :float, min: 0 %> - <%= f.input_field :away_goals, as: :float, min: 0 %>
+            <li><%=game.home_team.name%> - <%=game.away_team.name%>
+                <%= simple_form_for @bet do |f| %>
+                <%= f.input_field :home_goals, as: :float, min: 0 %> - <%= f.input_field :away_goals, as: :float, min: 0 %>
 
-                    <%= f.hidden_field :game_id, value: game.id %>
+                <%= f.hidden_field :game_id, value: game.id %>
 
-                    <%= f.hidden_field :home_team_id, value: game.home_team.id %>
-                    <%= f.hidden_field :away_team_id, value: game.away_team.id %>
+                <%= f.hidden_field :home_team_id, value: game.home_team.id %>
+                <%= f.hidden_field :away_team_id, value: game.away_team.id %>
 
-                    <%= f.submit "Save", class: "button is-rounded"%></li>
-                <% end %>
-                <%= render 'shared/flash' %>
-                <% @bets.each do |bet| %>
-                    <li><%=game.home_team.name %> <%= [bet.home_goals]%> - <%= [ bet.away_goals] %> <%=game.away_team.name %> </li>
-                <% end %>
+                <%= f.submit "Save", class: "button is-rounded"%>
+
+
+
+            </li>
+            <% end %>
+            <%= render 'shared/flash' %>
+            <% @bets.each do |bet| %>
+            <li><%=game.home_team.name %> <%= [bet.home_goals]%> - <%= [ bet.away_goals] %> <%=game.away_team.name %>
+
+                <%= link_to 'Edit', edit_bet_path(bet), class: "button is-rounded" %>
+                <%= link_to 'Destroy', bet_path(bet), method: :delete, class: "button is-rounded", data: { confirm: 'Are you sure?' } %>
+
+
+            </li>
+
+            <% end %>
             <% end %>
 
         </ul>

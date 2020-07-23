@@ -20,7 +20,17 @@ class BetsController < ApplicationController
     def show
         @bet = Bet.find(params[:id])
     end
-        
+
+    def edit
+        @bet = Bet.find(params[:id])
+      end
+    
+      def update
+        @bet = Bet.find(params[:id])
+        @bet.update(bets_params)
+        redirect_to bets_path(@bet)
+      end
+    
     def destroy
         @bet = Bet.find(params[:id])
         @bet.destroy
