@@ -9,6 +9,7 @@ class CreateBets < ActiveRecord::Migration[6.0]
       t.belongs_to :game
       t.timestamps
     end
+    add_index :bets, [:user_id, :game_id], unique: true
   end
 end
 
